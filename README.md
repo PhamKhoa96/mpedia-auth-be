@@ -12,3 +12,16 @@ Client 				 								                                                    Auth ser
 
 References:
 Purpose of refresh_token
+
+
+[Register]
+- OTP
+- check if email and phone exist
+- If email or phone is exist -> do not allow
+
+[Logout]
+- revoke token
+
+[Api for admin]
+
+[Forget password]
