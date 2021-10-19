@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"auth_be/config"
+	"auth_be/dsoauth"
 )
 
 func main() {
@@ -13,6 +14,8 @@ func main() {
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 
 	conf := config.LoadConfigFromToml(args.ConfigFile)
+
+	accesslist := dsoauth.NewAccessList(args.AclModel, args.AclPolicy)
 
 	logger.Println("Start server")
 	server := webserver.NewServer(conf, logger, nil, accesslist, auth, secretkey)
